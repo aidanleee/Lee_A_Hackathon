@@ -1,0 +1,23 @@
+{
+  "name": "lee_a_hackathon",
+  "version": "1.0.0",
+  "description": "Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidanleee/Lee_A_Hackathon.git"
+  },
+  "author": "Aidan Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aidanleee/Lee_A_Hackathon/issues"
+  },
+  "homepage": "https://github.com/aidanleee/Lee_A_Hackathon#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
