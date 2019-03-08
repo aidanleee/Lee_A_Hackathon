@@ -1,3 +1,4 @@
+
 // components will go here
 import HomeComponent from './components/HomeComponent.js';
 import SignUpComponent from './components/SignUpComponent.js';
@@ -16,7 +17,7 @@ const vm = new Vue ({
     //el: '#app',
 
     data: {
-
+        message: "sup from vue!",
     },
 
     created: function() {

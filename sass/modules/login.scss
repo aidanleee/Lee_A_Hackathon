@@ -1,0 +1,63 @@
+#signup-container {
+    background: url("../images/signup-mobile.jpg") no-repeat center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#signup {
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px 0 40px 0;
+    background: rgba(5, 0, 0, 0.8); 
+    h2 {
+        color: white;
+    }
+    input {
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        width: 80%;
+    }
+    button {
+        background-color: white;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 5px 20px 5px 20px;
+        border-radius: 5px;
+    }
+}
+
+#signup button:hover {
+    cursor: pointer;
+    background-color: $yellow;
+    color: $orange;
+}
+
+@media (min-width: 576px) {
+    #signup-container {
+        background: url("../images/signup-desktop.jpg") no-repeat center;
+    }
+}
+
+@media (min-width: 992px) {
+    #signup-container {
+        padding-top: 120px;
+        padding-bottom: 150px;
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    #signup {
+        border-radius: 15px;
+        input {
+            width: 60%;
+            padding: 7px;
+        }
+    }
+ }
+ 
