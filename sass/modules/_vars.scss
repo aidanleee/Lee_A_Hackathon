@@ -1,1 +1,10 @@
 // insert variables here
+
+$title-font: 'Friday Vibes', sans-serif;
+
+$yellow: #FCFDA5;
+
+@font-face {
+    font-family: $title-font;
+    src: url("fonts/Fridayvibes.ttf");
+}
