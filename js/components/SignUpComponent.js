@@ -1,19 +1,19 @@
 export default {
     template: `
     <div id="signup-container" class="row">
-        <div id="signup" class="col-10 col-offset-1 col-lg-8 offset-lg-2">
+        <form action="index.php" method="POST" id="signup" class="col-10 col-offset-1 col-lg-8 offset-lg-2">
             <h2>Sign Up</h2>
             <br>
-            <input type="text" placeholder="First Name" required>
+            <input type="text" name="fname" placeholder="First Name" required>
             <br>
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" name="lname" placeholder="Last Name" required>
             <br>
-            <input type="email" placeholder="Email Address" required>
+            <input type="email" name="email" placeholder="Email Address" required>
             <br>
-            <input type="tel" placeholder="Phone Number" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
             <br>
-            <button type="button" v-on:click="signUp()">Sign Up</button>
-        </div>
+            <button type="submit" name="submit"">Sign Up</button>
+        </form>
     </div>
     `,
     data() {
@@ -23,9 +23,6 @@ export default {
     },
 
     methods: {
-        signUp() {
-            // post to database
-        }
         
     }
 }
