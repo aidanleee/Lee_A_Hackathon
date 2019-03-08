@@ -1,2 +1,13 @@
 // import variables
 @import 'modules/vars';
+@import 'modules/mediaqueries';
+@import 'modules/home.scss';
+@import 'modules/login.scss';
+
+.hide {
+    display: none;
+}
+
+#home-container {
+    background: url("../images/kids.jpg") no-repeat center;
+}
