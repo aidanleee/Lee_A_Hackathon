@@ -1,28 +1,43 @@
 export default {
     template: `
     <div id="signup-container" class="row">
-        <form action="index.php" method="POST" id="signup" class="col-10 col-offset-1 col-lg-8 offset-lg-2">
+        <form @submit.prevent="signUp" id="signup" class="col-10 col-offset-1 col-lg-8 offset-lg-2">
             <h2>Sign Up</h2>
             <br>
-            <input type="text" name="fname" placeholder="First Name" required>
+            <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
             <br>
-            <input type="text" name="lname" placeholder="Last Name" required>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
             <br>
-            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
             <br>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="tel" name="phone" id="phone" placeholder="Phone Number" required>
             <br>
-            <button type="submit" name="submit"">Sign Up</button>
+            <button type="submit">Sign Up</button>
         </form>
     </div>
     `,
-    data() {
-        return {
-            message: "hello from sign up page",
-        }
-    },
 
     methods: {
+        signUp() {
+            // debugger;
+            let url = "./includes/index.php?add_user=true",
+                userData = new FormData(document.querySelector("form"));
+            
+            fetch(url, {
+                method: 'POST',
+                body: userData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.result == true) {
+                        alert('added a new user!')
+                    } else {
+                        alert('couldn\'t add user: ', data.result)
+                    }
+                })
+                .catch((err) => console.error(err)
+                );
+        }
         
     }
 }

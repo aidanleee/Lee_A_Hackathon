@@ -1,11 +1,20 @@
-<?php
-    $user = "root";
-    $pw = "root";
+<?php 
+    $db_dsn = array( 
+        'host' => 'localhost',
+        'dbname' => 'hackathon',
+        'charset' => 'utf8'
+    );
 
-    try {
-        $conn = new PDO('mysql:host=localhost;dbname=hackathon', $user,$pw);
-    } catch(PDOException $exception) {
-        echo 'connect error!' . $exception->getMessage();
+    $dsn = 'mysql:'.http_build_query($db_dsn, '', ';');
+
+    //This is the DB credentials
+
+    $db_user = 'root';
+    $db_pass = 'root';
+
+    try{
+        $pdo = new PDO($dsn, $db_user, $db_pass);
+    } catch (PDOException $exception){
+        echo 'Connection Error:'.$exception->getMessage();
+        exit();
     }
-?>
-

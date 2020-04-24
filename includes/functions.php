@@ -1,18 +1,20 @@
 <?php
     include('connect.php');
 
-    function createUser($fname,$lname,$email,$phone){
-        $create_user_query = "INSERT INTO user(fname,lname,email,phone)";
-        $create_user_query.= "VALUES(:fname,:lname,:email,:phone)";
+        function signUp($conn) {
+            $newUserQuery = $conn->prepare("INSERT INTO user (first_name, last_name, email, phone ) VALUES (:fname, :lname, :electronmail, :telphone)");
+            $newUserResult = $newUserQuery->execute(array(
+                ':fname' => $_POST['first_name'],
+                ':lname' => $_POST['last_name'],
+                ':electronmail' => $_POST['email'],
+                ':telphone' => $_POST['phone']
+            ));
 
-        $create_user_set = $pdo->prepare($create_user_query);
-        $create_user_set->execute(
-            array(
-                ':fname'=>$fname,
-                ':lname'=>$lname,
-                ':email'=>$email,
-                ':phone'=>$phone
-            )
-            );
-    }
-?>
+            if ($newUserResult) {
+                // success
+                return array('result' => $newUserResult);
+            } else {
+                // failure
+                return array('result' => false);
+            }
+        }
